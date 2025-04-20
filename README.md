@@ -10,7 +10,6 @@
 - 📍 Places to visit
 - 📅 Real-time booking system
 - 📊 Budget planner
-- 🗺️ Interactive map integration
 
 ## 🧱 Project Structure
 
