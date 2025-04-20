@@ -1,0 +1,497 @@
+.booking-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.booking-container {
+  background: rgba(10, 15, 40, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+}
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.booking-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+  background: linear-gradient(to right, #6e8efb, #a777e3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.booking-header p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.highlight {
+  color: #6e8efb;
+  font-weight: 500;
+}
+
+/* Content layout */
+.booking-content {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 2rem;
+}
+
+/* Item preview */
+.booking-item-preview {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.preview-image {
+  height: 220px;
+  overflow: hidden;
+}
+
+.preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-details {
+  padding: 1.5rem;
+}
+
+.preview-details h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-light);
+}
+
+.preview-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.preview-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.rating-value {
+  font-weight: 600;
+  color: #ffc107;
+}
+
+.rating-stars {
+  color: #ffc107;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 2px;
+}
+
+.preview-price, .preview-cuisine, .preview-entry-fee {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Highlights */
+.hotel-amenities, .restaurant-highlights, .attraction-highlights {
+  margin-top: 1.5rem;
+}
+
+.hotel-amenities h3, .restaurant-highlights h3, .attraction-highlights h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.amenities-list, .highlights-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.amenities-list span, .highlights-list span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.amenities-list i, .highlights-list i {
+  color: #6e8efb;
+  font-size: 0.9rem;
+}
+
+/* Form container */
+.booking-form-container {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.booking-form-container h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.75rem;
+}
+
+/* Form styling */
+.booking-form .form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.booking-form .form-group {
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.booking-form input[type="text"],
+.booking-form input[type="date"],
+.booking-form input[type="number"],
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: white;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.booking-form select option {
+  background-color: #1a1a2e;
+  color: white;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  outline: none;
+  border-color: #6e8efb;
+  box-shadow: 0 0 0 2px rgba(110, 142, 251, 0.1);
+}
+
+/* Ticket count container for attractions */
+.ticket-count-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ticket-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-type label {
+  margin-bottom: 0;
+}
+
+.ticket-type input {
+  width: 80px !important;
+}
+
+/* Checkbox styling */
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.form-checkbox label {
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+/* Room price table */
+.room-price-info {
+  margin-bottom: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.room-price-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.price-row.price-header {
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--text-light);
+}
+
+.price-cell {
+  padding: 0.75rem 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.price-row.price-header .price-cell {
+  color: var(--text-light);
+}
+
+.price-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* Menu price info for restaurants */
+.menu-price-info {
+  margin-bottom: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.menu-price-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+/* Ticket price info for attractions */
+.ticket-price-info {
+  margin-bottom: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ticket-price-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+/* Button styling */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.confirm-btn, .cancel-btn {
+  flex: 1;
+  padding: 0.9rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.confirm-btn {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+}
+
+.confirm-btn:hover {
+  background: linear-gradient(135deg, #5e7ef6, #9666de);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(110, 142, 251, 0.2);
+}
+
+.cancel-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Loading state */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #6e8efb;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error message */
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+}
+
+.error-message i {
+  font-size: 3rem;
+  color: #f97316;
+  margin-bottom: 1.5rem;
+}
+
+.error-message h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.error-message p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.back-btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Notification */
+.notification {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.8), rgba(16, 185, 129, 0.6));
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+  animation: slideDown 0.3s ease-in-out;
+}
+
+.notification.success {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.8), rgba(16, 185, 129, 0.6));
+}
+
+.notification.error {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.8), rgba(239, 68, 68, 0.6));
+}
+
+.notification p {
+  margin: 0;
+  font-weight: 500;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  .booking-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .booking-form .form-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .amenities-list, .highlights-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .booking-header h1 {
+    font-size: 1.8rem;
+  }
+} 

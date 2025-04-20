@@ -1,0 +1,15 @@
+.main-content {
+  padding-top: 90px; /* Adjust based on your header height (70px + some extra space) */
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make sure hero section doesn't overlap with header */
+.hero-section {
+  margin-top: 0; /* Removed any existing margin-top */
+  padding-top: 1.5rem; /* Added padding instead */
+} 

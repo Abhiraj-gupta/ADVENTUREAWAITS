@@ -1,0 +1,70 @@
+.category-selector {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #f7fafc;
+  border: 2px solid #edf2f7;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn i {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #4a5568;
+  transition: color 0.3s ease;
+}
+
+.category-btn span {
+  font-weight: 500;
+  color: #4a5568;
+  transition: color 0.3s ease;
+}
+
+.category-btn:hover {
+  background-color: #e6f2ff;
+  border-color: #bee3f8;
+}
+
+.category-btn:hover i,
+.category-btn:hover span {
+  color: #3182ce;
+}
+
+.category-btn.active {
+  background-color: #ebf8ff;
+  border-color: #90cdf4;
+}
+
+.category-btn.active i,
+.category-btn.active span {
+  color: #2b6cb0;
+}
+
+@media (max-width: 576px) {
+  .category-selector {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .category-btn {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .category-btn i {
+    margin-bottom: 0;
+  }
+}

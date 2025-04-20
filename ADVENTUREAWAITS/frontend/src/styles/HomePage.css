@@ -1,0 +1,1111 @@
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  background-image: url('/public/up1.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 4rem;
+  padding-top: 1.5rem;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.8) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 80%;
+  padding: 2rem;
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title-top {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.hero-title-main {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #f8f8f8;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+  background: linear-gradient(90deg, #ff6b95 0%, #ffc796 50%, #6c63ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-tagline {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-name {
+  font-weight: 700;
+  color: #f8f8f8;
+}
+
+.hero-cta {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.5);
+}
+
+.hero-cta:hover {
+  background-color: #5a4fcf;
+  transform: translateY(-3px);
+}
+
+.hero-cta i {
+  transition: transform 0.3s;
+}
+
+.hero-cta:hover i {
+  transform: translateX(5px);
+}
+
+/* State Selector Section */
+.state-selector {
+  margin: 4rem auto;
+  padding: 2rem;
+  max-width: 1200px;
+}
+
+.state-selector h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  color: var(--text-light);
+}
+
+.state-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.state-card {
+  background-color: var(--background-card);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  cursor: pointer;
+  border: 1px solid var(--card-border);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.state-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.state-info {
+  padding: 1.2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.state-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.state-info p {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  flex-grow: 1;
+}
+
+.state-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  border-color: var(--primary-color);
+}
+
+.state-card.selected {
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 15px rgba(108, 99, 255, 0.5);
+}
+
+/* Category Rows */
+.category-rows {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 4rem;
+}
+
+.category-row {
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.category-row.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.row-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.section-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.hotel-icon {
+  background-color: rgba(108, 99, 255, 0.15);
+  color: var(--primary-color);
+}
+
+.restaurant-icon {
+  background-color: rgba(255, 107, 149, 0.15);
+  color: var(--secondary-color);
+}
+
+.attraction-icon {
+  background-color: rgba(45, 212, 191, 0.15);
+  color: #2dd4bf;
+}
+
+.budget-icon {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.section-title {
+  flex-grow: 1;
+}
+
+.section-title h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
+  color: var(--text-light);
+}
+
+.section-title p {
+  font-size: 1rem;
+  color: var(--text-gray);
+}
+
+.view-all-link {
+  display: flex;
+  align-items: center;
+}
+
+.view-all-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  border: 1px solid var(--card-border);
+  border-radius: 2rem;
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.view-all-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary-color);
+}
+
+.view-all-btn i {
+  transition: transform 0.3s;
+}
+
+.view-all-btn:hover i {
+  transform: translateX(3px);
+}
+
+/* Modern Budget Calculator Styles */
+.budget-calculator {
+  background: rgba(16, 18, 27, 0.4);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  margin-top: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.budget-calculator-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.budget-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 250px;
+}
+
+.full-width {
+  flex-basis: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Number input with +/- buttons */
+.number-input {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.number-input input {
+  flex: 1;
+  text-align: center;
+  border: none;
+  background: transparent;
+  padding: 12px 0;
+}
+
+.number-input button {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.number-input button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Radio group styling */
+.radio-group {
+  display: flex;
+  gap: 15px;
+}
+
+.radio-option {
+  position: relative;
+  flex: 1;
+}
+
+.radio-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-option label {
+  display: block;
+  padding: 10px 15px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.radio-option input[type="radio"]:checked + label {
+  background: rgba(142, 68, 173, 0.2);
+  border-color: rgba(142, 68, 173, 0.5);
+  box-shadow: 0 0 15px rgba(142, 68, 173, 0.2);
+}
+
+/* Budget result styling */
+.budget-result {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.budget-total {
+  text-align: center;
+}
+
+.budget-total h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.total-amount {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 15px;
+}
+
+.breakdown-toggle {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5px 10px;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.breakdown-toggle:hover {
+  color: white;
+}
+
+/* Budget breakdown chart */
+.budget-breakdown {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.breakdown-chart {
+  margin-top: 15px;
+}
+
+.chart-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chart-label {
+  width: 120px;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.chart-bar-bg {
+  flex: 1;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.chart-bar {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.chart-value {
+  width: 100px;
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Form actions */
+.form-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.calculate-btn {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.calculate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .budget-calculator {
+    padding: 20px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .radio-group {
+    flex-wrap: wrap;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Star background */
+.star-bg {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle 4s infinite ease-in-out;
+  z-index: -1;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero-title-top {
+    font-size: 1.5rem;
+  }
+  
+  .hero-title-main {
+    font-size: 3rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title-top {
+    font-size: 1.2rem;
+  }
+  
+  .hero-title-main {
+    font-size: 2.5rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1rem;
+  }
+  
+  .row-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .section-title {
+    margin-bottom: 1rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .budget-categories {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title-main {
+    font-size: 2rem;
+  }
+  
+  .hero-cta {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Explore States Section */
+.explore-states-section {
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.explore-states-section h2 {
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+/* New grid layout specifically for 3x2 */
+.explore-states-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.explore-state-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 2rem 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-height: 120px;
+}
+
+.explore-state-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.explore-state-card h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .explore-states-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .explore-states-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+  
+  .explore-states-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Three items per row layout */
+.three-item-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .three-item-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .three-item-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Grid layout for 2 rows of 3 columns */
+.grid-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.grid-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.item-card {
+  display: block;
+  text-decoration: none;
+  color: white;
+  height: 100%;
+}
+
+.item-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.item-card:hover .item-image img {
+  transform: scale(1.05);
+}
+
+.item-content {
+  padding: 15px;
+}
+
+.item-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.item-location {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.item-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating-value {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.rating-stars {
+  color: #FFD700;
+  font-size: 0.8rem;
+}
+
+.item-price, .item-cuisine, .item-entry-fee {
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .grid-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Item actions styling */
+.item-actions {
+  display: flex;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.secondary-actions {
+  margin-top: 8px;
+}
+
+.item-view-btn, .item-book-btn, .add-favorite-btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.item-view-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  flex: 1;
+}
+
+.item-view-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.item-book-btn {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border: none;
+  flex: 1.5;
+}
+
+.item-book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.restaurant-btn {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+.attraction-btn {
+  background: linear-gradient(135deg, #f46b45, #eea849);
+}
+
+.add-favorite-btn {
+  width: 100%;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.add-favorite-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.add-favorite-btn i {
+  color: #ff6b6b;
+}
+
+/* Hotel-specific button */
+#home-hotels-section .item-book-btn {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+}
+
+#home-hotels-section .item-book-btn:hover {
+  background: linear-gradient(135deg, #5d7dfa, #9666e2);
+}
+
+/* Restaurant-specific button */
+#home-restaurants-section .item-book-btn {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+#home-restaurants-section .item-book-btn:hover {
+  background: linear-gradient(135deg, #0e8a81, #32da71);
+}
+
+/* Attraction-specific button */
+#home-attractions-section .item-book-btn {
+  background: linear-gradient(135deg, #f46b45, #eea849);
+}
+
+#home-attractions-section .item-book-btn:hover {
+  background: linear-gradient(135deg, #e35f3b, #e9a13f);
+}
+
+/* Budget Tracker with 3x2 Grid */
+.budget-tracker {
+  background: rgba(20, 20, 35, 0.7);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 25px;
+}
+
+.budget-tracker-title {
+  text-align: center;
+  margin: 0 0 25px 0;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.budget-grid-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.budget-grid-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.budget-grid-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.budget-grid-cell label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.budget-input,
+.budget-select {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  padding: 12px 15px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.budget-input:focus,
+.budget-select:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.budget-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 15px) center;
+  padding-right: 40px;
+}
+
+.budget-result-section {
+  background: linear-gradient(135deg, rgba(110, 142, 251, 0.4), rgba(167, 119, 227, 0.4));
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.budget-amount-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.budget-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.budget-amount {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+.budget-submit-btn {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.budget-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .budget-grid-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .budget-grid-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .budget-result-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .budget-amount-container {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Add this to your HomePage.css */
+.home-page {
+  padding-top: 90px; /* Adjust based on your header height */
+}
+
+/* For better image rendering and quality */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+}
+
+/* Add a class to handle scroll-triggered animation for images */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Budget Calculator styles */
+.option-description {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.5rem;
+  font-style: italic;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 0.5rem;
+  border-radius: 4px;
+  border-left: 3px solid #3498db;
+}
+
+.budget-error-message {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-left: 3px solid #e74c3c;
+}

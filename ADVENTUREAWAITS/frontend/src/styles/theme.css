@@ -1,0 +1,258 @@
+:root {
+  /* Light mode (default) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #4a5568;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --accent-color: #3b82f6;
+  --accent-hover: #2563eb;
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --header-bg: linear-gradient(to right, #3b82f6, #2dd4bf);
+  --header-text: #ffffff;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --footer-bg: #1e293b;
+  --footer-text: #f8fafc;
+  --primary-color: #6c63ff;
+  --secondary-color: #ff6b95;
+  --background-dark: #121630;
+  --background-card: #1e2343;
+  --text-light: #ffffff;
+  --text-gray: #b8c0cc;
+  --text-dark: #1a202c;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --card-border: #3a3f59;
+  --card-hover-border: #5a4fcf;
+  --star-color: #ffdb4d;
+  
+  /* RGB values for rgba usage */
+  --accent-color-rgb: 59, 130, 246;
+  --primary-color-rgb: 108, 99, 255;
+  --secondary-color-rgb: 255, 107, 149;
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --accent-color: #60a5fa;
+  --accent-hover: #93c5fd;
+  --card-bg: #1e293b;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --header-bg: linear-gradient(to right, #2563eb, #0891b2);
+  --header-text: #ffffff;
+  --success-color: #34d399;
+  --warning-color: #fbbf24;
+  --error-color: #f87171;
+  --footer-bg: #0f172a;
+  --footer-text: #f1f5f9;
+  --primary-color: #6c63ff;
+  --secondary-color: #ff6b95;
+  --background-dark: #121630;
+  --background-card: #1e2343;
+  --text-light: #ffffff;
+  --text-gray: #b8c0cc;
+  --text-dark: #1a202c;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --card-border: #3a3f59;
+  --card-hover-border: #5a4fcf;
+  --star-color: #ffdb4d;
+  
+  /* RGB values for rgba usage */
+  --accent-color-rgb: 96, 165, 250;
+  --primary-color-rgb: 108, 99, 255;
+  --secondary-color-rgb: 255, 107, 149;
+}
+
+/* Global styles */
+body {
+  background-color: var(--background-dark);
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.15) 1px, transparent 0),
+    radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.2) 1px, transparent 0),
+    radial-gradient(circle at 125px 125px, rgba(255, 255, 255, 0.1) 1px, transparent 0);
+  background-size: 150px 150px;
+  color: var(--text-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  background-color: var(--bg-primary);
+}
+
+/* Animated theme transition */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-container {
+  background-color: var(--background-dark);
+}
+
+.card {
+  background-color: var(--background-card);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 20px var(--shadow-color);
+  color: var(--text-light);
+}
+
+.card:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+.card h3, .card h4 {
+  color: var(--text-light);
+}
+
+.card p, .location, .price-range, .cuisine, .entry-fee {
+  color: var(--text-gray);
+}
+
+.stars {
+  color: var(--star-color);
+}
+
+.view-more-btn {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.view-more-btn:hover {
+  background-color: #5a4fcf;
+}
+
+.view-more-btn.active {
+  background-color: var(--secondary-color);
+}
+
+.view-more-btn.active:hover {
+  background-color: #e05a81;
+}
+
+.header {
+  background-color: var(--background-dark);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.header h1 {
+  color: var(--text-light);
+}
+
+.state-card {
+  background-color: var(--background-card);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.state-card:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+.state-card h4 {
+  color: var(--text-light);
+}
+
+.state-card p {
+  color: var(--text-gray);
+}
+
+.state-card.selected {
+  border-color: var(--accent-color);
+  background-color: rgba(50, 230, 226, 0.1);
+}
+
+.state-title {
+  color: var(--text-light);
+}
+
+.hours, .location-details {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--accent-color);
+}
+
+.hours i, .location-details i {
+  color: var(--accent-color);
+}
+
+.special-features li {
+  color: var(--text-gray);
+}
+
+.footer {
+  background-color: var(--background-dark);
+  border-top: 1px solid var(--card-border);
+}
+
+/* Animation for stars in the background */
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+.star {
+  position: fixed;
+  background-color: white;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.star-1 {
+  width: 2px;
+  height: 2px;
+  top: 5%;
+  left: 10%;
+  animation: twinkle 4s infinite ease-in-out;
+}
+
+.star-2 {
+  width: 3px;
+  height: 3px;
+  top: 20%;
+  left: 30%;
+  animation: twinkle 5s infinite ease-in-out;
+}
+
+.star-3 {
+  width: 1px;
+  height: 1px;
+  top: 15%;
+  left: 70%;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+.star-4 {
+  width: 2px;
+  height: 2px;
+  top: 40%;
+  left: 90%;
+  animation: twinkle 6s infinite ease-in-out;
+}
+
+.star-5 {
+  width: 2px;
+  height: 2px;
+  top: 75%;
+  left: 5%;
+  animation: twinkle 4.5s infinite ease-in-out;
+}
+
+.star-6 {
+  width: 1px;
+  height: 1px;
+  top: 85%;
+  left: 50%;
+  animation: twinkle 3.5s infinite ease-in-out;
+}

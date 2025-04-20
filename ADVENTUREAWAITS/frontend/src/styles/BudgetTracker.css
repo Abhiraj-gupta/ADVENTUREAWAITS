@@ -1,0 +1,804 @@
+/* Root container */
+.budget-tracker-container {
+  background-color: #111133;
+  background-image: linear-gradient(to bottom, rgba(15, 20, 40, 0.8), rgba(5, 10, 25, 0.9));
+  min-height: calc(100vh - 150px);
+  padding: 2rem 0;
+  padding-top: 30px;
+  color: #fff;
+}
+
+/* Header */
+.budget-tracker-header {
+  text-align: center;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.budget-tracker-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, #fff 0%, #a18cd1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.budget-tracker-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.budget-tracker-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, rgba(110, 142, 251, 0), rgba(110, 142, 251, 0.8), rgba(110, 142, 251, 0));
+  border-radius: 3px;
+}
+
+/* Content area */
+.budget-content {
+  display: flex;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Sidebar */
+.trips-sidebar {
+  width: 320px;
+  background: rgba(10, 15, 40, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.new-trip-btn {
+  background: linear-gradient(135deg, #38ef7d, #11998e);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.new-trip-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(56, 239, 125, 0.2);
+}
+
+.new-trip-btn i {
+  font-size: 0.9rem;
+}
+
+/* Trip list */
+.trip-list {
+  flex: 1;
+  margin-top: 1rem;
+  overflow-y: auto;
+  max-height: 450px;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  opacity: 1;
+}
+
+.trips-list::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 3px;
+}
+
+.trips-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.trips-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.trips-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.no-trips {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.no-trips i {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.5;
+}
+
+.no-trips p {
+  margin: 0;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.trip-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.trip-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.trip-item.active {
+  background: rgba(110, 142, 251, 0.15);
+  border-color: rgba(110, 142, 251, 0.4);
+}
+
+.trip-item-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.trip-destination {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.trip-budget-info {
+  margin-top: 0.75rem;
+}
+
+.budget-amount {
+  font-weight: 600;
+  color: #38ef7d;
+  font-size: 1.1rem;
+}
+
+/* New trip form */
+.new-trip-form {
+  background: rgba(10, 15, 40, 0.6);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.destination-search input {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(26, 26, 46, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: white;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Style for dropdown options */
+.form-group select,
+.form-group select option,
+.destination-dropdown,
+.destination-option {
+  background-color: #1a1a2e;
+  color: white;
+  font-weight: 500;
+}
+
+.form-group select option {
+  padding: 10px;
+  background-color: #1a1a2e !important;
+  color: white !important;
+}
+
+/* Fix for dropdown appearance on different browsers */
+.form-group select {
+  -webkit-appearance: menulist;
+  appearance: menulist;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #6e8efb;
+  box-shadow: 0 0 0 2px rgba(110, 142, 251, 0.1);
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.form-row .form-group input[type="date"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: 10px;
+  min-width: 120px;
+  overflow: hidden;
+}
+
+/* Fix date input appearance for better fit */
+input[type="date"] {
+  text-overflow: ellipsis;
+}
+
+/* Destination search */
+.destination-search {
+  position: relative;
+}
+
+.destination-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 8px 8px;
+  z-index: 10;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.destination-dropdown::-webkit-scrollbar {
+  width: 5px;
+}
+
+.destination-dropdown::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.destination-dropdown::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.destination-option {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.2s ease;
+  background-color: #1a1a2e;
+}
+
+.destination-option:hover {
+  background: rgba(110, 142, 251, 0.15);
+}
+
+.no-results {
+  padding: 15px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.create-trip-btn {
+  flex: 1;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.create-trip-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(110, 142, 251, 0.2);
+}
+
+.cancel-btn {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Main content area */
+.budget-main {
+  flex: 1;
+}
+
+/* Welcome screen */
+.no-active-trip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  background: rgba(10, 15, 40, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3rem;
+}
+
+.no-active-trip i {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.no-active-trip h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, #fff, #a18cd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.no-active-trip p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+  margin: 0 0 2rem 0;
+  max-width: 500px;
+}
+
+.create-first-trip-btn {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.create-first-trip-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(110, 142, 251, 0.3);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .budget-content {
+    flex-direction: column;
+  }
+  
+  .trips-sidebar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .budget-tracker-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .budget-content {
+    padding: 0 1.5rem;
+  }
+  
+  .expense-form-row {
+    flex-direction: column;
+  }
+  
+  .expense-form-row .form-group {
+    min-width: 100%;
+  }
+  
+  .expense-form-row .add-expense-btn {
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .form-row .form-group {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .budget-tracker-header {
+    padding-bottom: 1.5rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .sidebar-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .new-trip-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .no-active-trip {
+    padding: 2rem 1rem;
+  }
+  
+  .no-active-trip h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Add starry background effect to enhance space theme */
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.2; }
+}
+
+.budget-tracker-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background-image: 
+    radial-gradient(1px 1px at 10px 10px, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 25px 50px, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 160px 120px, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* Improved form controls for better visibility */
+.form-group input, 
+.form-group select,
+.destination-search input {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(26, 26, 46, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: white;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Firefox specific dropdown styling */
+@-moz-document url-prefix() {
+  .form-group select {
+    background-color: #1a1a2e;
+    color: white;
+    text-shadow: none;
+  }
+  
+  .form-group select option {
+    background-color: #1a1a2e;
+    color: white;
+  }
+}
+
+/* Webkit specific dropdown styling */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .form-group select {
+    background-color: #1a1a2e;
+    color: white;
+  }
+  
+  .form-group select option {
+    background-color: #1a1a2e;
+    color: white;
+  }
+  
+  input[type="date"] {
+    padding-right: 5px;
+  }
+}
+
+/* Add expense form styles */
+.expense-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.expense-form-row .form-group {
+  flex: 1;
+  min-width: 150px; /* Ensure fields have a minimum width */
+}
+
+.expense-form-row .add-expense-btn {
+  align-self: flex-end;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.expense-form-row .add-expense-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(110, 142, 251, 0.2);
+}
+
+/* Trip Actions */
+.trip-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.save-to-account-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #4263eb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.save-to-account-btn:hover:not(:disabled) {
+  background-color: #364fc7;
+  transform: translateY(-2px);
+}
+
+.save-to-account-btn:disabled {
+  background-color: #adb5bd;
+  cursor: not-allowed;
+}
+
+/* Save Budget Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.budget-save-modal {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.budget-save-modal h3 {
+  margin-top: 0;
+  color: #4263eb;
+  font-size: 1.5rem;
+}
+
+.save-budget-details {
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.save-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.save-detail span {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.save-detail strong {
+  font-size: 1rem;
+  color: #212529;
+}
+
+.save-budget-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cancel-save-btn, .confirm-save-btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-save-btn {
+  background-color: #e9ecef;
+  color: #495057;
+  border: none;
+}
+
+.cancel-save-btn:hover:not(:disabled) {
+  background-color: #dee2e6;
+}
+
+.confirm-save-btn {
+  background-color: #4263eb;
+  color: white;
+  border: none;
+}
+
+.confirm-save-btn:hover:not(:disabled) {
+  background-color: #364fc7;
+}
+
+.cancel-save-btn:disabled, .confirm-save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .save-budget-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+.view-saved-budgets-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #4263eb;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(66, 99, 235, 0.2);
+}
+
+.view-saved-budgets-btn:hover {
+  background-color: #364fc7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(66, 99, 235, 0.25);
+} 

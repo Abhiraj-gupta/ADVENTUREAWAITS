@@ -1,0 +1,267 @@
+.state-selector-container {
+  margin: 2rem 0;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.state-title {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Search container styles */
+.search-container-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  z-index: 10;
+}
+
+/* Search styles */
+.search-container {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+}
+
+/* State options list */
+.state-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  max-height: 300px;
+  animation: dropdownFade 0.2s ease-in-out;
+  z-index: 20;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.state-option {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f5f9;
+  transition: all 0.2s ease;
+}
+
+.state-option:hover {
+  background-color: #f0f9ff;
+}
+
+.state-option.selected {
+  background-color: #e6f7ff;
+  border-left: 3px solid #4facfe;
+}
+
+.state-option h4 {
+  color: #2d3748;
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.state-option p {
+  color: #4a5568;
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.no-results {
+  padding: 1.5rem;
+  text-align: center;
+  color: #a0aec0;
+  font-style: italic;
+}
+
+/* States grid */
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.state-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  height: auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.state-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-color: #4facfe;
+  background-color: #f0f9ff;
+}
+
+.state-card.selected {
+  border-color: #4facfe;
+  background-color: #e6f7ff;
+}
+
+.state-card h4 {
+  color: #2d3748;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.state-card:hover h4 {
+  color: #4facfe;
+}
+
+.state-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.state-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.state-card:hover .state-image img {
+  transform: scale(1.1);
+}
+
+.state-info {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), white);
+}
+
+.state-specialty {
+  color: #4a5568;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.data-available {
+  font-size: 0.7rem;
+  background-color: #38a169;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .search-container-wrapper {
+    max-width: 100%;
+  }
+  
+  .state-options {
+    max-height: 250px;
+  }
+  
+  .states-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .state-card {
+    height: 280px;
+  }
+  
+  .state-image {
+    height: 160px;
+  }
+  
+  .state-info {
+    padding: 0.75rem;
+  }
+  
+  .state-card h4 {
+    font-size: 1.1rem;
+  }
+  
+  .state-specialty {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .states-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .state-card {
+    height: 260px;
+  }
+  
+  .state-image {
+    height: 150px;
+  }
+}

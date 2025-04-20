@@ -1,0 +1,383 @@
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  height: 100%;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.card-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.favorite-btn:hover {
+  background-color: rgba(255, 59, 48, 0.8);
+  transform: scale(1.1);
+}
+
+.favorite-btn.active {
+  background-color: rgba(255, 59, 48, 0.8);
+}
+
+.favorite-btn i {
+  font-size: 1rem;
+}
+
+.card-content {
+  padding: 1.25rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.card-location {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.rating-value {
+  font-weight: 600;
+  color: #ffc107;
+}
+
+.rating-stars {
+  color: #ffc107;
+  font-size: 0.9rem;
+}
+
+.card-price, .card-cuisine, .card-entry-fee {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+/* Notification styles */
+.card-notification {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(16, 185, 129, 0.9);
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.9rem;
+  z-index: 100;
+  white-space: nowrap;
+  animation: slideDown 0.3s forwards, fadeOut 0.3s forwards 2.7s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-notification p {
+  margin: 0;
+}
+
+@keyframes slideDown {
+  from {
+    top: -40px;
+    opacity: 0;
+  }
+  to {
+    top: -45px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.card-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(to top, var(--background-card), transparent);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.location i {
+  color: var(--accent-color);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.stars {
+  color: #f59e0b;
+  letter-spacing: 1px;
+}
+
+.price-range, .cuisine, .entry-fee {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.description {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.card-details-btn, .card-booking-btn {
+  flex: 1;
+  padding: 0.6rem 0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.card-details-btn {
+  background-color: rgba(88, 120, 255, 0.15);
+  color: var(--primary-color, #6e8efb);
+}
+
+.card-details-btn:hover {
+  background-color: rgba(88, 120, 255, 0.25);
+}
+
+.card-booking-btn {
+  background-color: var(--primary-color, #6e8efb);
+  color: white;
+}
+
+.card-booking-btn:hover {
+  background-color: var(--primary-hover, #5e7ef6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(88, 120, 255, 0.25);
+}
+
+/* Type-specific styling */
+.card[data-type="hotels"] .card-title {
+  color: #60a5fa;
+}
+
+.card[data-type="restaurants"] .card-title {
+  color: #f97316;
+}
+
+.card[data-type="attractions"] .card-title {
+  color: #10b981;
+}
+
+@media screen and (max-width: 768px) {
+  .card-image {
+    height: 180px;
+  }
+  
+  .card-content {
+    padding: 1.2rem;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .card-actions {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card-image {
+    height: 160px;
+  }
+  
+  .favorite-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
+
+.details-section {
+  margin-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 16px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.special-features h4, 
+.hours h4, 
+.location-details h4 {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.special-features ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.special-features li {
+  color: var(--text-gray);
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.attraction-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hours, .location-details {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid var(--accent-color);
+}
+
+.hours i, .location-details i {
+  color: var(--accent-color);
+  margin-right: 6px;
+}
+
+.hours p, .location-details p {
+  color: var(--text-gray);
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.view-details-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(var(--accent-color-rgb), 0.2);
+  color: var(--accent-color);
+  border: 1px solid rgba(var(--accent-color-rgb), 0.3);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-details-btn:hover {
+  background-color: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.card-title::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.card-title:hover::after {
+  width: 100%;
+}
