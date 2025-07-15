@@ -31,9 +31,9 @@ const AuthForm = ({ type, onSuccess, switchForm }) => {
         if (!formData.name.trim()) {
           throw new Error('Name is required');
         }
-        await signup(formData.email, formData.password, formData.name);
+        await signUpWithEmail(formData.email, formData.password, formData.name);
       } else {
-        await login(formData.email, formData.password);
+        await signInWithEmail(formData.email, formData.password);
       }
       
       onSuccess();

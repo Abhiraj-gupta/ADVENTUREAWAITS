@@ -169,7 +169,6 @@ exports.resetPassword = asyncHandler(async (req, res, next) => {
 
 // Get token from model, create cookie and send response
 const sendTokenResponse = (user, statusCode, res) => {
-  // Create token
   const token = user.getSignedJwtToken();
 
   const options = {
@@ -188,6 +187,14 @@ const sendTokenResponse = (user, statusCode, res) => {
     .cookie('token', token, options)
     .json({
       success: true,
-      token
+      token,
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        token: token,
+        createdAt: user.createdAt,
+        photoURL: user.photoURL || '', // optional
+      }
     });
-}; 
+};

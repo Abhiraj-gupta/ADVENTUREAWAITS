@@ -7,6 +7,7 @@ const cors = require('cors');
 const connectDB = require('./src/config/db');
 const errorHandler = require('./src/middleware/error');
 
+
 // Load env vars
 dotenv.config();
 
